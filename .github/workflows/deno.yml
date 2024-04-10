@@ -93,3 +93,11 @@ jobs:
       - name: Deploy
         run: echo "deploy production 2"
 
+  deploy-1:
+    uses: ./.github/workflows/deploy_ecs.yaml
+    environment: "staging"
+
+  deploy-2:
+    uses: ./.github/workflows/deploy_ecs.yaml
+    environment: "staging"
+
