@@ -95,9 +95,7 @@ jobs:
 
   deploy-1:
     uses: ./.github/workflows/deploy.yaml
-    environment: "staging"
 
   deploy-2:
     uses: ./.github/workflows/deploy.yaml
-    environment: "staging"
 
