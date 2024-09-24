@@ -50,7 +50,8 @@ jobs:
 
       # Uncomment this step to verify the use of 'deno fmt' on each commit.
       - name: Deploy
-        run: echo "deploy"
+        # run: echo "deploy"
+        run: exit 127
   deploy:
     needs:
       - prepare-1
