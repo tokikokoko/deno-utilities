@@ -56,7 +56,7 @@ jobs:
       - prepare-1
       - prepare-2
     if: |
-      always() && (needs.second_job.result == 'success' || needs.second_job.result == 'skipped')
+      always() && (needs.*.result == 'success' || needs.*.result == 'skipped')
     runs-on: ubuntu-latest
     environment: "staging"
     steps:
