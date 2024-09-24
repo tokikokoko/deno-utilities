@@ -40,7 +40,7 @@ jobs:
         run: echo "deploy"
 
   prepare-2:
-    if: true
+    if: false
     runs-on: ubuntu-latest
     steps:
       - name: Setup repo
