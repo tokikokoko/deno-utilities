@@ -95,4 +95,5 @@ jobs:
 
   deploy:
     uses: ./.github/workflows/deploy.yaml
-
+    with:
+      environment: 'staging'
