@@ -52,6 +52,8 @@ jobs:
       - name: Deploy
         run: echo "deploy"
   deploy:
+    if: |
+      always() && (needs.second_job.result == 'success' || needs.second_job.result == 'skipped')
     needs:
       - prepare-1
       - prepare-2
