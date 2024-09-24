@@ -62,6 +62,5 @@ jobs:
     uses: ./.github/workflows/deploy.yaml
     needs:
       - prepare-deploy
-    environment: "staging"
     with:
       environment: 'staging'
