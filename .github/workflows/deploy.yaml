@@ -52,11 +52,11 @@ jobs:
       - name: Deploy
         run: echo "deploy"
   deploy:
-    if: |
-      always() && (needs.second_job.result == 'success' || needs.second_job.result == 'skipped')
     needs:
       - prepare-1
       - prepare-2
+    if: |
+      always() && (needs.second_job.result == 'success' || needs.second_job.result == 'skipped')
     runs-on: ubuntu-latest
     environment: "staging"
     steps:
