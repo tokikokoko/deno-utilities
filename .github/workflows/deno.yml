@@ -56,11 +56,11 @@ jobs:
       # Uncomment this step to verify the use of 'deno fmt' on each commit.
       - name: Deploy
         # run: echo "deploy"
-        run: exit 127
+        run: echo "success"
 
   deploy:
     uses: ./.github/workflows/deploy.yaml
     needs:
       - prepare-deploy
     with:
-      environment: 'staging'
+      environment: "production"
