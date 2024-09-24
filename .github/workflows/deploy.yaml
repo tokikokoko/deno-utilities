@@ -55,9 +55,9 @@ jobs:
     needs:
       - prepare-1
       - prepare-2
-    # always() && (needs.*.result == 'success' || needs.*.result == 'skipped')
     if: |
       always()
+        && !contains(needs.*.result, 'failure')
     runs-on: ubuntu-latest
     environment: "staging"
     steps:
