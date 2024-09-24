@@ -56,7 +56,7 @@ jobs:
       - name: Deploy
         # run: echo "deploy"
         run: exit 127
-  deploy:
+  aaa-deploy:
     name: "Deploy ${{ inputs.environment }}"
     needs:
       - prepare-1
