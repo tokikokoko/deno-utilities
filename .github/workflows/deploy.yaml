@@ -62,9 +62,11 @@ jobs:
       - prepare-1
       - prepare-2
     # ifの条件によりskipされたjobは無視するためにcontainsでフィルタする
+    # if: |
+    #   always()
+    #     && !contains(needs.*.result, 'failure')
     if: |
-      always()
-        && !contains(needs.*.result, 'failure')
+        !contains(needs.*.result, 'failure')
     runs-on: ubuntu-latest
     environment: "${{ inputs.environment }}"
     steps:
