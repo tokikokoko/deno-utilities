@@ -42,7 +42,7 @@ jobs:
         run: echo "deploy"
 
       - name: Deploy 2
-        run: "echo ${{ inputs.count > 0 && 'positive' || 'negative' }}"
+        run: "echo ${{ inputs.count >= 0 && 'positive' || 'negative' }}"
 
   prepare-2:
     if: false
