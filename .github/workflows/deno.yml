@@ -64,4 +64,4 @@ jobs:
       - prepare-deploy
     with:
       environment: "production"
-      count: ${{ null }}
+      count: ${{ null || 1 }}
