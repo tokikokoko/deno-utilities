@@ -19,6 +19,10 @@ on:
         required: true
         type: string
   workflow_dispatch:
+    inputs:
+      count:
+        required: false
+        type: number
 
 
 jobs:
@@ -38,6 +42,9 @@ jobs:
       # Uncomment this step to verify the use of 'deno fmt' on each commit.
       - name: Deploy
         run: echo "deploy"
+
+      - name: Deploy 2
+        run: "echo ${{ inputs.count }}"
 
   prepare-2:
     if: false
@@ -61,7 +68,7 @@ jobs:
     needs:
       - prepare-1
       - prepare-2
-    # ifの条件によりskipされたjobは無視するためにcontainsでフィルタする
+    # ifの条件によりskipもしくはsucceededのjobだけ通すため、containsでフィルタする
     if: |
       always()
         && ( contains(needs.*.result, 'succeeded') || contains(needs.*.result, 'skipped') )
