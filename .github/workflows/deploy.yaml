@@ -40,7 +40,7 @@ jobs:
         run: echo "deploy"
 
   prepare-2:
-    if: false
+    if: true
     runs-on: ubuntu-latest
     steps:
       - name: Setup repo
@@ -65,9 +65,6 @@ jobs:
     if: |
       always()
         && ( !contains(needs.*.result, 'succeeded') || !contains(needs.*.result, 'skipped') )
-
-    # if: |
-    #     !contains(needs.*.result, 'failure')
     runs-on: ubuntu-latest
     environment: "${{ inputs.environment }}"
     steps:
