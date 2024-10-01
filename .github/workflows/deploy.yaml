@@ -64,7 +64,7 @@ jobs:
     # ifの条件によりskipされたjobは無視するためにcontainsでフィルタする
     if: |
       always()
-        && ( !contains(needs.*.result, 'succeeded') || !contains(needs.*.result, 'skipped') )
+        && ( contains(needs.*.result, 'succeeded') || contains(needs.*.result, 'skipped') )
     runs-on: ubuntu-latest
     environment: "${{ inputs.environment }}"
     steps:
