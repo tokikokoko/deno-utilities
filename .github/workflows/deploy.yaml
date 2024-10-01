@@ -18,12 +18,10 @@ on:
       environment:
         required: true
         type: string
-  workflow_dispatch:
-    inputs:
       count:
         required: false
         type: number
-
+  workflow_dispatch:
 
 jobs:
   prepare-1:
